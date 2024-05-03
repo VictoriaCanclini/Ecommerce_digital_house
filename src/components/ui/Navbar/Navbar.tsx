@@ -6,14 +6,14 @@ const Navbar = () => {
   return (
     <div className={styles.navbarContainer}>
       <div className={styles.navbarDetail}>
-        <img src={Logo} alt="" />
+        <img src={Logo} alt="Logo de ecommerce" width={50} height={50} />
         <div>
           <span>DH Ecommerce</span>
         </div>
       </div>
-      <div>
-        <p>2</p>
-        <img src={Cart} alt="" />
+      <div className={styles.navbarCartContainer}>
+        <p className={styles.navbarTextAmount}>2</p>
+        <img src={Cart} alt="Cart" />
       </div>
     </div>
   );

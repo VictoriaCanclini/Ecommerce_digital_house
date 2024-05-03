@@ -1,5 +1,13 @@
-const Hero = () => {
-  return <div>Hero</div>;
-};
+import styles from "./Hero.module.css";
 
-export default Hero;
+export const Hero = () => {
+  return (
+    <div className={styles.heroContainer}>
+      <div className={styles.heroTitleContainer}>
+        <h1>
+          Super Flash Sale <span>50% off</span>
+        </h1>
+      </div>
+    </div>
+  );
+};
