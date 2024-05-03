@@ -6,10 +6,9 @@ export interface Product {
   image: string;
   name: string;
   release: Release;
-  product: string;
   tail: string;
   type: string;
-  id: string;
+  id: number;
   price: number;
 }
 
@@ -18,4 +17,12 @@ export interface Release {
   eu: string;
   jp: string;
   na: string;
+}
+
+export interface CartProduct {
+  id: number;
+  name: string;
+  image: string;
+  quantity: number;
+  price: number;
 }
