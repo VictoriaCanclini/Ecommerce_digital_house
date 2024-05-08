@@ -11,7 +11,7 @@
   }
 }
 
-/* .paginationContainer {
+.paginationContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,4 +45,4 @@
   text-transform: uppercase;
   transition: 0.5s ease-in-out;
   width: 160px;
-} */
+}
