@@ -24,6 +24,15 @@ const Navbar = () => {
     navigate("/");
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("userLogin");
+    navigate("/login");
+  };
+
+  const handleDashboard = () => {
+    navigate("/dashboard");
+  };
+
   return (
     <div className={styles.navbarContainer}>
       <div className={styles.navbarDetail} onClick={handleNavigateToHome}>
@@ -34,6 +43,8 @@ const Navbar = () => {
       </div>
       {location.pathname !== "/checkout" && (
         <>
+          <button onClick={handleDashboard}>Add Product</button>
+          <button onClick={handleLogout}>Logout</button>
           <div className={styles.navbarCartContainer}>
             <p className={styles.navbarTextAmount}>{cartItems.length}</p>
             <img src={Cart} alt="Cart" onClick={handleShowCartModal} />

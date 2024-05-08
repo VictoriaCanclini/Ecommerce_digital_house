@@ -1,9 +1,10 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import styles from "./CardProduct.module.css";
 
 import { CartProduct, Product } from "../../../interface";
 import useCartContext from "../../../hooks/useCartContext";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   product: Product;
@@ -11,6 +12,7 @@ interface Props {
 
 export const CardProduct: FC<Props> = ({ product }) => {
   const { dispatch } = useCartContext();
+  const navigate = useNavigate();
 
   const item: CartProduct = {
     id: product.id,
@@ -19,6 +21,11 @@ export const CardProduct: FC<Props> = ({ product }) => {
     price: product.price,
     quantity: 1,
   };
+
+  useEffect(() => {
+    const userLogin = localStorage.getItem("userLogin");
+    if (!userLogin) navigate("/login");
+  }, []);
 
   const addToCart = (item: CartProduct) => {
     dispatch({ type: "ADD_TO_CART", payload: item });

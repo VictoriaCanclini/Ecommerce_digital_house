@@ -18,6 +18,7 @@ const Dashboard = () => {
     releaseDate: "",
     tail: "",
     type: "",
+    id: "",
     price: 0,
   });
 
@@ -25,11 +26,6 @@ const Dashboard = () => {
     const userLogin = localStorage.getItem("userLogin");
     if (!userLogin) navigate("/login");
   }, []);
-
-  const handleLogout = () => {
-    localStorage.removeItem("userLogin");
-    navigate("/login");
-  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setProduct({
@@ -47,12 +43,14 @@ const Dashboard = () => {
     mutation.mutate(product);
   };
 
+  const handleHome = () => {
+    navigate("/");
+  };
+
   return (
     <div className={styles.container}>
-      <div>
-        <h1>Dashboard</h1>
-        <button onClick={handleLogout}>Logout</button>
-      </div>
+      <h1 className={styles.container}>Add Product</h1>
+      <button onClick={handleHome}>Home</button>
       <form onSubmit={handleSubmit}>
         <div className={styles.formControlLogin}>
           <label htmlFor="amiiboSeries">Amiibo Series</label>
@@ -149,6 +147,17 @@ const Dashboard = () => {
             name="type"
             id="type"
             value={product.type}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className={styles.formControlLogin}>
+          <label htmlFor="id">Id</label>
+          <input
+            type="text"
+            name="id"
+            id="id"
+            value={product.id}
             onChange={handleChange}
             required
           />

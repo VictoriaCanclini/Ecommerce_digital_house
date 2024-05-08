@@ -8,7 +8,7 @@ export interface Product {
   release?: Release;
   tail: string;
   type: string;
-  id?: number;
+  id: string;
   price: number;
 }
 
@@ -20,7 +20,7 @@ export interface Release {
 }
 
 export interface CartProduct {
-  id: number;
+  id: string;
   name: string;
   image: string;
   quantity: number;
