@@ -1,11 +1,12 @@
 import { Product } from "../../src/interface/products";
 
 const BASE_URL = "https://ecommerce-digital-house.vercel.app/api";
+//http://localhost:3000
 
 export const getProducts = async (page = 0): Promise<Product[]> => {
   try {
     const response = await fetch(
-      `${BASE_URL}products?_start=${page}&_limit=14`
+      `${BASE_URL}/products?_start=${page}&_limit=14`
     );
 
     if (response.ok) {
