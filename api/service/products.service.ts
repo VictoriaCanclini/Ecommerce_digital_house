@@ -1,6 +1,6 @@
 import { Product } from "../../src/interface/products";
 
-const BASE_URL = "https://ecommerce-digital-house.vercel.app";
+const BASE_URL = "https://ecommerce-digital-house.vercel.app/api";
 
 export const getProducts = async (page = 0): Promise<Product[]> => {
   try {
