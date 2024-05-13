@@ -1,11 +1,9 @@
-import { Product } from "../interface";
-
-const BASE_URL = "https://ecommerce-digital-house.vercel.app";
+import { Product } from "../../src/interface/products";
 
 export const getProducts = async (page = 0): Promise<Product[]> => {
   try {
     const response = await fetch(
-      `${BASE_URL}/products?_start=${page}&_limit=14`
+      `http://localhost:3000/products?_start=${page}&_limit=14`
     );
 
     if (response.ok) {
@@ -21,7 +19,7 @@ export const getProducts = async (page = 0): Promise<Product[]> => {
 
 export const createProduct = async (product: Product): Promise<Product> => {
   try {
-    const response = await fetch(`${BASE_URL}/products`, {
+    const response = await fetch(`http://localhost:3000/products`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

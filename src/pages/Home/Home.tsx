@@ -1,7 +1,7 @@
 import { Hero } from "../../components/ui/Hero";
 import styles from "./Home.module.css";
 import { CardProduct } from "../../components/ui/CardProduct";
-import { getProducts } from "../../service";
+import { getProducts } from "../../../api/service";
 import { Toaster } from "sonner";
 import { useQuery } from "react-query";
 import { useState } from "react";

@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Dashboard.module.css";
 import { useEffect, useState } from "react";
 import { useMutation } from "react-query";
-import { createProduct } from "../../service";
+import { createProduct } from "../../../api/service";
 import { Product } from "../../interface";
 
 const Dashboard = () => {
